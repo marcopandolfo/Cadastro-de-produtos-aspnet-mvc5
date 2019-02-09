@@ -10,7 +10,7 @@ namespace CaelumEstoque.Controllers
 {
     public class ProdutoController : Controller
     {
-        // GET: Produto
+        [Route("produtos", Name ="ListaProdutos")]
         public ActionResult Index()
         {
             ProdutosDAO dao = new ProdutosDAO();
@@ -50,6 +50,7 @@ namespace CaelumEstoque.Controllers
                 return View("Form");
             }
         }
+        [Route("produtos/{id}", Name = "VisualizaProduto")] //Dizendo que ela vai ser acessada por essa rota
         public ActionResult Visualiza(int id)
         {
             ProdutosDAO dao = new ProdutosDAO();
