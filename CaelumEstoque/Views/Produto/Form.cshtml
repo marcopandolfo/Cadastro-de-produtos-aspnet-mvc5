@@ -1,5 +1,7 @@
 ﻿
 <form action="/Produto/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+
     @Html.ValidationMessage("produto.Invalido")
 
     <label for="nome">Nome:</label>
